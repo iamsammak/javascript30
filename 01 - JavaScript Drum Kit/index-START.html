@@ -60,6 +60,19 @@
 <script>
   window.addEventListener('keydown', function (e) {
     console.log(e);
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    console.log(audio);
+    console.log(key);
+    if(!audio) return; // stop the function from running all together
+
+    audio.currentTime = 0; // therefore we won't to rewind to the start
+    audio.play();
+    // if we try pressing 'f' over and over we only hear the sound every so often
+    // because the audio file has empty noise after the actual noise
+    // if you call an audio element that is already playing it won't play again
+    key.classList.add('playing'); //same as jQuery key.addClass('playing')
+    // we also have .remove and .toggle in vanilla JavaScript
   });
 </script>
 

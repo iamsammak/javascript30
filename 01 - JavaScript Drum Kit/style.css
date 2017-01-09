@@ -33,6 +33,7 @@ body,html {
 
 .playing {
   transform:scale(1.1);
+  /*transform:scale(1.5); testing*/
   border-color:#ffc600;
   box-shadow: 0 0 10px #ffc600;
 }
