@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --base: #e67e22;
+  --spacing: 20px;
+  --blur: 15px;
+}
+
+.hl {
+  color: var(--base);
+}
+
+img {
+  background: var(--base);
+  padding: var(--spacing);
+  filter: blur(var(--blur));
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

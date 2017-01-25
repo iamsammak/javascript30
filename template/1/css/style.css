@@ -1,0 +1,47 @@
+body {
+  background: url(../img/drums.jpeg);
+  background-size: cover;
+}
+
+.drums {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.drum {
+  box-sizing: border-box;
+  width: 10%;
+  text-align: center;
+  border-radius: 4px;
+  border: 6px solid black;
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.07s;
+  cursor: pointer;
+}
+
+.drum h2 {
+  color: white;
+  font-size: 1.8em;
+  font-family: monospace;
+}
+
+.drum p {
+  color: yellow;
+  font-family: monospace;
+}
+
+.drum.playing {
+  border-color: yellow;
+  background: rgba(255,255,255,0.6);
+  transform: scale(1.1);
+}
+
+.drum.playing h2 {
+  color: black;
+
+}

@@ -1,0 +1,131 @@
+$spacer: 20px !default;
+
+$sizes: (
+  xs: 0.25,
+  sm: 0.5,
+  md: 1.5,
+  lg: 2,
+  xl: 3
+);
+
+$directions: (
+  l: left,
+  r: right,
+  t: top,
+  b: bottom
+);
+
+$styles: (
+  p: padding,
+  m: margin
+);
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+@each $styleClass, $styleName in $styles {
+  .#{$styleClass} {
+    #{$styleName}: $spacer;
+  }
+
+  @each $directionName, $direction in $directions {
+    .#{$styleClass}-#{$directionName} {
+      #{$styleName}-#{$direction}: $spacer;
+    }
+  }
+
+  @each $sizeName, $size in $sizes {
+    .#{$styleClass}-#{$sizeName} {
+      #{$styleName}: $spacer * $size;
+    }
+
+    @each $directionName, $direction in $directions {
+      .#{$styleClass}-#{$directionName}-#{$sizeName} {
+        #{$styleName}-#{$direction}: $spacer * $size;
+      }
+    }
+  }
+}
+
+.pos-r {
+  position: relative;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.pos-f {
+  position: fixed;
+}
+
+.pos-s {
+  position: static;
+}
+
+@each $colorName, $color in $colors {
+  .#{$colorName}-bg {
+    background-color: $color;
+  }
+
+  .#{$colorName}-font {
+    color: $color;
+  }
+
+  .#{$colorName}-border {
+    border-color: $color;
+  }
+
+  .#{$colorName}-font-hover:hover {
+    color: $color;
+  }
+
+  .#{$colorName}-bg-hover:hover {
+    background-color: $color;
+  }
+
+  .#{$colorName}-border-hover:hover {
+    border-color: $color;
+  }
+}
+
+$header-size: 18px;
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-size: $header-size / $i + $header-size;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bold-hover:hover {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.underline-hover:hover {
+  text-decoration: underline;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
